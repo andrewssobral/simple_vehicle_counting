@@ -1,3 +1,6 @@
 vs2013/Release/
+tmp/
 *.exe
 *.pdb
+*.sdf
+*.opensdf

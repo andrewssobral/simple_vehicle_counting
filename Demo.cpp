@@ -10,6 +10,7 @@ int main(int argc, char **argv)
 {
   std::cout << "Using OpenCV " << CV_MAJOR_VERSION << "." << CV_MINOR_VERSION << "." << CV_SUBMINOR_VERSION << std::endl;
 
+  /* Open video file */
   CvCapture *capture = 0;
   capture = cvCaptureFromAVI("dataset/video.avi");
   if(!capture){
@@ -17,15 +18,11 @@ int main(int argc, char **argv)
     return 1;
   }
   
-  int resize_factor = 100; // 50% of original image
-  IplImage *frame_aux = cvQueryFrame(capture);
-  IplImage *frame = cvCreateImage(cvSize((int)((frame_aux->width*resize_factor)/100) , (int)((frame_aux->height*resize_factor)/100)), frame_aux->depth, frame_aux->nChannels);
-  
-  /* Background Subtraction */
+  /* Background Subtraction Algorithm */
   IBGS *bgs;
   bgs = new PixelBasedAdaptiveSegmenter;
   
-  /* Blob Tracking */
+  /* Blob Tracking Algorithm */
   cv::Mat img_blob;
   BlobTracking* blobTracking;
   blobTracking = new BlobTracking;
@@ -36,12 +33,11 @@ int main(int argc, char **argv)
 
   std::cout << "Press 'q' to quit..." << std::endl;
   int key = 0;
+  IplImage *frame;
   while(key != 'q')
   {
-    frame_aux = cvQueryFrame(capture);
-    if(!frame_aux) break;
-
-    cvResize(frame_aux, frame);
+    frame = cvQueryFrame(capture);
+    if(!frame) break;
 
     cv::Mat img_input(frame);
     cv::imshow("Input", img_input);
