@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="../Demo.cpp" />
+    <ClCompile Include="..\package_bgs\PBAS\PBAS.cpp">
+      <Filter>package_bgs\PBAS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_bgs\PBAS\PixelBasedAdaptiveSegmenter.cpp">
+      <Filter>package_bgs\PBAS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_tracking\BlobTracking.cpp">
+      <Filter>package_tracking</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_tracking\cvblob\cvaux.cpp">
+      <Filter>package_tracking\cvblob</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_tracking\cvblob\cvblob.cpp">
+      <Filter>package_tracking\cvblob</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_tracking\cvblob\cvcolor.cpp">
+      <Filter>package_tracking\cvblob</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_tracking\cvblob\cvcontour.cpp">
+      <Filter>package_tracking\cvblob</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_tracking\cvblob\cvlabel.cpp">
+      <Filter>package_tracking\cvblob</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_tracking\cvblob\cvtrack.cpp">
+      <Filter>package_tracking\cvblob</Filter>
+    </ClCompile>
+    <ClCompile Include="..\package_analysis\VehicleCouting.cpp">
+      <Filter>package_analysis</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="package_bgs">
+      <UniqueIdentifier>{6c78c53f-c2e1-4c83-abba-0a017c162da1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="package_bgs\PBAS">
+      <UniqueIdentifier>{28305431-876f-432e-b861-d03cfff7eeaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="package_tracking">
+      <UniqueIdentifier>{d164af9b-aa85-432f-9573-46e56d137c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="package_tracking\cvblob">
+      <UniqueIdentifier>{a404eccb-5f7b-4568-8789-6c28d913be4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="package_analysis">
+      <UniqueIdentifier>{630045ab-414f-4430-97ca-4eaca789ae23}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\package_bgs\IBGS.h">
+      <Filter>package_bgs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\package_bgs\PBAS\PBAS.h">
+      <Filter>package_bgs\PBAS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\package_bgs\PBAS\PixelBasedAdaptiveSegmenter.h">
+      <Filter>package_bgs\PBAS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\package_tracking\BlobTracking.h">
+      <Filter>package_tracking</Filter>
+    </ClInclude>
+    <ClInclude Include="..\package_tracking\cvblob\cvblob.h">
+      <Filter>package_tracking\cvblob</Filter>
+    </ClInclude>
+    <ClInclude Include="..\package_analysis\VehicleCouting.h">
+      <Filter>package_analysis</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<enableInputBlur>1</enableInputBlur>
+<enableOutputBlur>1</enableOutputBlur>
+<alpha>7.</alpha>
+<beta>1.</beta>
+<N>20</N>
+<Raute_min>2</Raute_min>
+<R_incdec>5.0000000745058060e-002</R_incdec>
+<R_lower>18</R_lower>
+<R_scale>5</R_scale>
+<T_dec>5.0000000745058060e-002</T_dec>
+<T_inc>1</T_inc>
+<T_init>18</T_init>
+<T_lower>2</T_lower>
+<T_upper>200</T_upper>
+<showOutput>1</showOutput>
+</opencv_storage>
