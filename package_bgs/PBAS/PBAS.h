@@ -1,4 +1,4 @@
-//Implementation of the PBAS from:
+﻿//Implementation of the PBAS from:
 //
 //M. Hofmann, P. Tiefenbacher, G. Rigoll 
 //"Background Segmentation with Feedback: The Pixel-Based Adaptive Segmenter", 
@@ -117,8 +117,8 @@ private:
 	std::vector<uchar*> currentFeaturesC_Pt; 
 	uchar* resultMap_Pt;
 	
-	std::vector<std::vector<float*>>B_Mag_Pts;
-	std::vector<std::vector<uchar*>>B_Col_Pts;
+	std::vector<std::vector<float*> >B_Mag_Pts;
+	std::vector<std::vector<uchar*> >B_Col_Pts;
 	
 	double sumMagnitude;
 	double formerMeanMag;
@@ -130,7 +130,7 @@ private:
 	//size of background history B(x_i)
 	int N;
 	// background model
-	std::vector<std::vector<cv::Mat>> backgroundModel;
+	std::vector<std::vector<cv::Mat> > backgroundModel;
 	//####################################################################################
 	//####################################################################################
 	//R-Threshhold - Variables

@@ -1,4 +1,4 @@
-#include "VehicleCouting.h"
+﻿#include "VehicleCouting.h"
 
 namespace FAV1
 {
@@ -70,7 +70,7 @@ VehiclePosition VehicleCouting::getVehiclePosition(const CvPoint2D64f centroid)
 {
   VehiclePosition vehiclePosition = VP_NONE;
 
-  if(LaneOrientation == LO_HORIZONTAL)
+  if(laneOrientation == LO_HORIZONTAL)
   {
     if(centroid.x < FAV1::roi_x0)
     {
@@ -85,7 +85,7 @@ VehiclePosition VehicleCouting::getVehiclePosition(const CvPoint2D64f centroid)
     }
   }
 
-  if(LaneOrientation == LO_VERTICAL)
+  if(laneOrientation == LO_VERTICAL)
   {
     if(centroid.y > FAV1::roi_y0)
     {
@@ -146,13 +146,13 @@ void VehicleCouting::process()
 
   if(ROI_OK)
   {
-    LaneOrientation = LO_NONE;
+    laneOrientation = LO_NONE;
 
     if(abs(FAV1::roi_x0 - FAV1::roi_x1) < abs(FAV1::roi_y0 - FAV1::roi_y1))
     {
       if(!firstTime)
         cv::putText(img_input, "HORIZONTAL", cv::Point(10,15), cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(255,255,255));
-      LaneOrientation = LO_HORIZONTAL;
+      laneOrientation = LO_HORIZONTAL;
 
       cv::putText(img_input, "(A)", cv::Point(FAV1::roi_x0-32,FAV1::roi_y0), cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(255,255,255));
       cv::putText(img_input, "(B)", cv::Point(FAV1::roi_x0+12,FAV1::roi_y0), cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(255,255,255));
@@ -162,7 +162,7 @@ void VehicleCouting::process()
     {
       if(!firstTime)
         cv::putText(img_input, "VERTICAL", cv::Point(10,15), cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(255,255,255));
-      LaneOrientation = LO_VERTICAL;
+      laneOrientation = LO_VERTICAL;
 
       cv::putText(img_input, "(A)", cv::Point(FAV1::roi_x0,FAV1::roi_y0+22), cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(255,255,255));
       cv::putText(img_input, "(B)", cv::Point(FAV1::roi_x0,FAV1::roi_y0-12), cv::FONT_HERSHEY_PLAIN, 1, cv::Scalar(255,255,255));

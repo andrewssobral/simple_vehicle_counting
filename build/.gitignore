@@ -1,0 +1,5 @@
+﻿# Ignore everything in this directory
+*
+# Except these files
+!.gitignore
+!FOR_LINUX_USERS
