@@ -42,15 +42,3 @@ target_link_libraries(simple_vehicle_counting_bin ${OpenCV_LIBS} simple_vehicle_
 set_target_properties(simple_vehicle_counting_bin
   PROPERTIES OUTPUT_NAME simple_vehicle_counting)
 
-add_executable(simple_vehicle_counting_demo ${demo})
-target_link_libraries(simple_vehicle_counting_demo ${OpenCV_LIBS} simple_vehicle_counting)
-
-#INSTALL(TARGETS simple_vehicle_counting
-#   simple_vehicle_counting_demo
-#   simple_vehicle_counting_bin
-#  RUNTIME DESTINATION bin COMPONENT app
-#  LIBRARY DESTINATION lib COMPONENT runtime
-#  ARCHIVE DESTINATION lib COMPONENT runtime
-#  PUBLIC_HEADER DESTINATION include/package_bgs COMPONENT dev
-#  FRAMEWORK DESTINATION "/Library/Frameworks"
-#)
