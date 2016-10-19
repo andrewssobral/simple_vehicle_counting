@@ -27,13 +27,17 @@ For Linux users
 * For Linux and Mac users, a Makefile is provided to compile the source code.
 * * Requirements: OpenCV 2.4.x (it only works with this version).
 * * Check out the latest project source code and compile it:
-```~/git clone https://github.com/andrewssobral/simple_vehicle_counting.git ```
-```~/cd simple_vehicle_counting ```
-```~/simple_vehicle_counting/cd build ```
-```~/simple_vehicle_counting/build/ cmake .. ```
-```~/simple_vehicle_counting/build/ make ```
+``` 
+~/git clone https://github.com/andrewssobral/simple_vehicle_counting.git
+~/cd simple_vehicle_counting
+~/simple_vehicle_counting/cd build
+~/simple_vehicle_counting/build/ cmake ..
+~/simple_vehicle_counting/build/ make
+```
 * * Run demo:
-```~/simple_vehicle_counting/run_simple_vehicle_counting.sh ```
+```
+~/simple_vehicle_counting/run_simple_vehicle_counting.sh
+```
 
 Docker image
 ----------------------------------------
