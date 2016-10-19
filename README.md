@@ -1,7 +1,7 @@
 Vehicle Detection, Tracking and Counting
 ========================================
 
-Last page update: **30/04/2015**
+Last page update: **19/10/2016**
 
 Last version: **1.0.0** (see Release Notes for more info)
 
@@ -15,11 +15,31 @@ Here is a step-by-step of a simplest way to do this:
 3. And then, check if the **centroid** of the moving object has crossed a **region of interest** (i.e. virtual line) in your video.
 4. Voilà! enjoy it :)
 
-Additional informations:
+<p align="center"><img src="https://sites.google.com/site/andrewssobral/vehicle_counting_screen.png" /></p>
+
+For Windows users
+-----------------
 * There is a Visual Studio 2013 template project in the **vs2013/** folder. Open it in the Visual Studio IDE and select [Release]-[Win32] mode.
 * The include files for the OpenCV 2.4.10 are provided in the **include/** folder, and the related static libraries are provided in the **lib/x86/vc12** folder.
 
-<p align="center"><img src="https://sites.google.com/site/andrewssobral/vehicle_counting_screen.png" /></p>
+For Linux users
+-----------------
+* For Linux and Mac users, a Makefile is provided to compile the source code.
+* * Requirements: OpenCV 2.4.x (it only works with this version).
+* * Check out the latest project source code and compile it:
+```~/git clone https://github.com/andrewssobral/simple_vehicle_counting.git ```
+```~/cd simple_vehicle_counting ```
+```~/simple_vehicle_counting/cd build ```
+```~/simple_vehicle_counting/build/ cmake .. ```
+```~/simple_vehicle_counting/build/ make ```
+* * Run demo:
+```~/simple_vehicle_counting/run_simple_vehicle_counting.sh ```
+
+Docker image
+----------------------------------------
+* Docker image is available at:
+* * **Ubuntu 16.04 + VNC + OpenCV 2.4.13 + Python 2.7 + Vehicle Detection, Tracking and Counting**
+https://hub.docker.com/r/andrewssobral/vehicle_detection_tracking_counting/
 
 Example code
 ------------
