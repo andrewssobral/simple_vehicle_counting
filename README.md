@@ -17,6 +17,18 @@ Here is a step-by-step of a simplest way to do this:
 
 <p align="center"><img src="https://sites.google.com/site/andrewssobral/vehicle_counting_screen.png" /></p>
 
+Citation
+--------
+If you use this library for your publications, please cite it as:
+```
+@ONLINE{vdtc,
+    author = "Andrews Sobral",
+    title  = "Vehicle Detection, Tracking and Counting",
+    year   = "2014",
+    url    = "https://github.com/andrewssobral/simple_vehicle_counting"
+}
+```
+
 For Windows users
 -----------------
 * There is a Visual Studio 2013 template project in the **vs2013/** folder. Open it in the Visual Studio IDE and select [Release]-[Win32] mode.
