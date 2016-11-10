@@ -19,7 +19,7 @@ Here is a step-by-step of a simplest way to do this:
 
 Citation
 --------
-If you use this library for your publications, please cite it as:
+If you use this code for your publications, please cite it as:
 ```
 @ONLINE{vdtc,
     author = "Andrews Sobral",
