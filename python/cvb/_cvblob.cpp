@@ -1,7 +1,3 @@
-//
-// Created by ken.yu on 17-4-6.")
-//
-
 #include <boost/python.hpp>
 
 #include "package_tracking/cvblob/cvblob.h"
