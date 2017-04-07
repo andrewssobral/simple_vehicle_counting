@@ -1,0 +1,3 @@
+[submodule "python/pyboostcvconverter"]
+	path = python/pyboostcvconverter
+	url = https://github.com/kyu-sz/pyboostcvconverter.git

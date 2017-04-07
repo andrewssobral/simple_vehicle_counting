@@ -5,22 +5,22 @@ project(simple_vehicle_counting)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++0x")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
 
-IF(UNIX)
-  # add some standard warnings
-  ADD_DEFINITIONS(-Wno-variadic-macros -Wno-long-long -Wall -Wextra -Winit-self -Woverloaded-virtual -Wsign-promo -Wno-unused-parameter -pedantic -Woverloaded-virtual -Wno-unknown-pragmas)
+IF (UNIX)
+    # add some standard warnings
+    ADD_DEFINITIONS(-Wno-variadic-macros -Wno-long-long -Wall -Wextra -Winit-self -Woverloaded-virtual -Wsign-promo -Wno-unused-parameter -pedantic -Woverloaded-virtual -Wno-unknown-pragmas)
 
-  # -ansi does not compile with sjn module
-  #ADD_DEFINITIONS(-ansi)
+    # -ansi does not compile with sjn module
+    #ADD_DEFINITIONS(-ansi)
 
-  # if you like to have warinings about conversions, e.g. double->int or double->float etc., or float compare
-  #ADD_DEFINITIONS(-Wconversion -Wfloat-equal)
-endif(UNIX)
+    # if you like to have warinings about conversions, e.g. double->int or double->float etc., or float compare
+    #ADD_DEFINITIONS(-Wconversion -Wfloat-equal)
+endif (UNIX)
 
 find_package(OpenCV REQUIRED)
 
-if(${OpenCV_VERSION} VERSION_LESS 2.3.1)
-  message (FATAL_ERROR "OpenCV version is not compatible: ${OpenCV_VERSION}")
-endif()
+if (${OpenCV_VERSION} VERSION_LESS 2.3.1)
+    message(FATAL_ERROR "OpenCV version is not compatible: ${OpenCV_VERSION}")
+endif ()
 
 file(GLOB demo Demo.cpp)
 
@@ -40,5 +40,19 @@ set_property(TARGET simple_vehicle_counting PROPERTY PUBLIC_HEADER ${bgs_include
 add_executable(simple_vehicle_counting_bin ${demo})
 target_link_libraries(simple_vehicle_counting_bin ${OpenCV_LIBS} simple_vehicle_counting)
 set_target_properties(simple_vehicle_counting_bin
-  PROPERTIES OUTPUT_NAME simple_vehicle_counting)
+        PROPERTIES OUTPUT_NAME simple_vehicle_counting)
 
+set(PYTHON_DESIRED_VERSION "2.X" CACHE STRING "Use Python 2.")
+add_subdirectory(python/pyboostcvconverter)
+
+find_package(Boost COMPONENTS python REQUIRED)
+message("Include dirs of boost: " ${Boost_INCLUDE_DIRS})
+message("Libs of boost: " ${Boost_LIBRARIES})
+find_package(PythonLibs 2.7 REQUIRED)
+message("Include dirs of Python: " ${PYTHON_INCLUDE_DIRS})
+message("Libs of Python: " ${PYTHON_LIBRARIES})
+
+add_subdirectory(python/tracking)
+add_subdirectory(python/cvb)
+add_subdirectory(python/bgs)
+add_subdirectory(python/analysis)
