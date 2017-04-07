@@ -12,14 +12,6 @@ if __name__ == '__main__':
         print('Cannot open video!')
         exit(1)
 
-    #
-    # a = np.array([[1., 2., 3.]])
-    # b = np.array([[1.],
-    #               [2.],
-    #               [3.]])
-    # print(pbcvt.dot(a, b))
-    # print(pbcvt.dot2(a, b))
-
     # noinspection PyUnresolvedReferences
     segmenter = pbas.PixelBasedAdaptiveSegmenter()
     # noinspection PyUnresolvedReferences
