@@ -1,7 +1,7 @@
 Vehicle Detection, Tracking and Counting
 ========================================
 
-Last page update: **19/10/2016**
+Last page update: **07/04/2017** (Added Python API)
 
 Last version: **1.0.0** (see Release Notes for more info)
 
@@ -151,5 +151,6 @@ make sure there are no previously generated libraries in the ["python" directory
 
 Release Notes:
 --------------
-* Version 1.0.0:
-First version.
+* 07/04/2017: Added Python API, thanks to [@kyu-sz](https://github.com/kyu-sz).
+
+* Version 1.0.0: First version.
