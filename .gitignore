@@ -5,3 +5,15 @@ tmp/
 *.sdf
 *.pdb
 *.opensdf
+*.so
+*.cbp
+*.pyc
+
+.idea/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake-build-debug/
+cmake_install.cmake
+simple_vehicle_counting
+pbcvt.cbp

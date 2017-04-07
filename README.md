@@ -40,7 +40,7 @@ For Linux users
 * * Requirements: OpenCV 2.4.x (it only works with this version).
 * * Check out the latest project source code and compile it:
 ``` 
-~/git clone https://github.com/andrewssobral/simple_vehicle_counting.git
+~/git clone --recursive https://github.com/andrewssobral/simple_vehicle_counting.git
 ~/cd simple_vehicle_counting
 ~/simple_vehicle_counting/cd build
 ~/simple_vehicle_counting/build/ cmake ..
@@ -130,6 +130,24 @@ int main(int argc, char **argv)
   return 0;
 }
 ```
+
+Python API
+----------------------------------------
+A [python demo](python/demo.py) shows how to call the Python API.
+It is similar as the [C++ demo](Demo.cpp).
+
+To use the Python API, you should copy ["python" directory](python) to overwrite the generated one.
+
+```
+~/simple_vehicle_counting/cd build
+~/simple_vehicle_counting/build/cmake ..
+~/simple_vehicle_counting/build/make -j 8
+~/simple_vehicle_counting/build/cp -r ../python/* python/
+~/simple_vehicle_counting/build/../run_python_demo.sh
+```
+
+If you have previously built the project at the project root, 
+make sure there are no previously generated libraries in the ["python" directory](python) by ```make clean```.
 
 Release Notes:
 --------------
