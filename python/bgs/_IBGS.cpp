@@ -1,7 +1,3 @@
-//
-// Created by ken.yu on 17-4-6.
-//
-
 #include "_IBGS.hpp"
 
 namespace bp = boost::python;
