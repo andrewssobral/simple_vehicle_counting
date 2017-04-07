@@ -1,7 +1,3 @@
-//
-// Created by ken.yu on 17-4-6.
-//
-
 #include <cstdio>
 
 #include "../_IBGS.hpp"
