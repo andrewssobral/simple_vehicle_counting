@@ -32,13 +32,12 @@
 //
 //
 //Author: P.Tiefenbacher, https://sites.google.com/site/pbassegmenter/
-//Technische Universität München, Germany
+//Technische Universitat Munchen, Germany
 //Date: 22-May-2012, Version:0.1
 ///////////
 
 #include <iostream>
-#include <cv.h>
-#include <highgui.h>
+#include <opencv2/opencv.hpp>
 
 #pragma once
 class PBAS

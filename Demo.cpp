@@ -1,6 +1,5 @@
 #include <iostream>
-#include <cv.h>
-#include <highgui.h>
+#include <opencv2/opencv.hpp>
 
 #include "package_bgs/PBAS/PixelBasedAdaptiveSegmenter.h"
 #include "package_tracking/BlobTracking.h"
@@ -39,7 +38,7 @@ int main(int argc, char **argv)
     frame = cvQueryFrame(capture);
     if(!frame) break;
 
-    cv::Mat img_input(frame);
+    cv::Mat img_input = cv::cvarrToMat(frame);
     cv::imshow("Input", img_input);
 
     // bgs->process(...) internally process and show the foreground mask image

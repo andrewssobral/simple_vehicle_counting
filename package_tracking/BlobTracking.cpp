@@ -62,7 +62,7 @@ void BlobTracking::process(const cv::Mat &img_input, const cv::Mat &img_mask, cv
   if(showOutput)
     cvShowImage("Blob Tracking", frame);
 
-  cv::Mat img_result(frame);
+  cv::Mat img_result = cv::cvarrToMat(frame);
   img_result.copyTo(img_output);
 
   //cvReleaseImage(&frame);

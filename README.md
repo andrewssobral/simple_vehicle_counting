@@ -1,14 +1,14 @@
 Vehicle Detection, Tracking and Counting
 ========================================
 
-Last page update: **07/04/2017** (Added Python API)
+Last page update: **12/04/2017** (Added Python API & OpenCV 3.x support)
 
 Last version: **1.0.0** (see Release Notes for more info)
 
 Hi everyone,
 
 There are several ways to perform vehicle detection, tracking and counting.
-Here is a step-by-step of a simplest way to do this: 
+Here is a step-by-step of a simplest way to do this:
 
 1. First, you will need to detect the moving objects. An easy way to do vehicle detection is by using a Background Subtraction (BS) algorithm. You can try to use a background subtraction library like [BGSLibrary](https://github.com/andrewssobral/bgslibrary#bgslibrary).
 2. For vehicle tracking, you will need to use a tracking algorithm. A simplest way to do this is by using a blob tracker algorithm (see [cvBlob](https://code.google.com/p/cvblob/) or [OpenCVBlobsLib](http://opencvblobslib.github.io/opencvblobslib/)). So, send the foreground mask to **cvBlob** or **OpenCVBlobsLib**. For example, the **cvBlob** library provide some methods to get the **centroid**, the **track** and the **ID** of the moving objects. You can also set to draw a **bounding box**, the **centroid** and the **angle** of the tracked object.
@@ -16,6 +16,7 @@ Here is a step-by-step of a simplest way to do this:
 4. Voilà! enjoy it :)
 
 <p align="center"><img src="https://sites.google.com/site/andrewssobral/vehicle_counting_screen.png" /></p>
+
 
 Citation
 --------
@@ -29,17 +30,60 @@ If you use this code for your publications, please cite it as:
 }
 ```
 
+
 For Windows users
 -----------------
-* There is a Visual Studio 2013 template project in the **vs2013/** folder. Open it in the Visual Studio IDE and select [Release]-[Win32] mode.
-* The include files for the OpenCV 2.4.10 are provided in the **include/** folder, and the related static libraries are provided in the **lib/x86/vc12** folder.
+* There is no Visual Studio 2013 template project anymore. Please, use CMAKE instead.
+
+#### Compiling with OpenCV 3.x and Visual Studio 2015 from CMAKE
+
+**Dependencies:**
+* OpenCV 3.x (tested with OpenCV 3.2.0)
+* GIT (tested with git version 2.7.2.windows.1).
+* CMAKE for Windows (tested with cmake version 3.1.1).
+* Microsoft Visual Studio (tested with VS2015).
+
+*Note: the procedure is similar for OpenCV 2.4.x and Visual Studio 2013.*
+
+Please follow the instructions below:
+
+1) Go to Windows console.
+
+2) Clone git repository:
+```
+git clone --recursive https://github.com/andrewssobral/simple_vehicle_counting.git
+```
+
+3) Go to **simple_vehicle_counting/build** folder.
+
+4) Set your OpenCV PATH:
+```
+set OpenCV_DIR=C:\OpenCV3.2.0\build
+```
+
+5) Launch CMAKE:
+```
+cmake -DOpenCV_DIR=%OpenCV_DIR% -G "Visual Studio 14 Win64" ..
+```
+
+6) Include OpenCV binaries in the system path:
+```
+set PATH=%PATH%;%OpenCV_DIR%\x64\vc14\bin
+```
+
+7) Open the **bgs.sln** file in your Visual Studio and switch to **'RELEASE'** mode
+
+8) Click on **'ALL_BUILD'** project and build!
+
+9) If everything goes well, copy **simple_vehicle_counting.exe** to **simple_vehicle_counting/** and run!
+
 
 For Linux users
 -----------------
-* For Linux and Mac users, a Makefile is provided to compile the source code.
-* * Requirements: OpenCV 2.4.x (it only works with this version).
+* For Linux and Mac users, a CMakefile is provided to compile the source code.
+
 * * Check out the latest project source code and compile it:
-``` 
+```
 ~/git clone --recursive https://github.com/andrewssobral/simple_vehicle_counting.git
 ~/cd simple_vehicle_counting
 ~/simple_vehicle_counting/cd build
@@ -51,6 +95,7 @@ For Linux users
 ~/simple_vehicle_counting/run_simple_vehicle_counting.sh
 ```
 
+
 Docker image
 ----------------------------------------
 * Docker image is available at:
@@ -61,8 +106,7 @@ Example code
 ------------
 ```C++
 #include <iostream>
-#include <cv.h>
-#include <highgui.h>
+#include <opencv2/opencv.hpp>
 
 #include "package_bgs/PBAS/PixelBasedAdaptiveSegmenter.h"
 #include "package_tracking/BlobTracking.h"
@@ -77,11 +121,11 @@ int main(int argc, char **argv)
     std::cerr << "Cannot open video!" << std::endl;
     return 1;
   }
-  
+
   /* Background Subtraction Algorithm */
   IBGS *bgs;
   bgs = new PixelBasedAdaptiveSegmenter;
-  
+
   /* Blob Tracking Algorithm */
   cv::Mat img_blob;
   BlobTracking* blobTracking;
@@ -99,13 +143,13 @@ int main(int argc, char **argv)
     frame = cvQueryFrame(capture);
     if(!frame) break;
 
-    cv::Mat img_input(frame);
+    cv::Mat img_input = cv::cvarrToMat(frame);
     cv::imshow("Input", img_input);
 
     // bgs->process(...) internally process and show the foreground mask image
     cv::Mat img_mask;
     bgs->process(img_input, img_mask);
-    
+
     if(!img_mask.empty())
     {
       // Perform blob tracking
@@ -126,10 +170,11 @@ int main(int argc, char **argv)
 
   cvDestroyAllWindows();
   cvReleaseCapture(&capture);
-  
+
   return 0;
 }
 ```
+
 
 Python API
 ----------------------------------------
@@ -146,11 +191,14 @@ To use the Python API, you should copy ["python" directory](python) to overwrite
 ~/simple_vehicle_counting/build/../run_python_demo.sh
 ```
 
-If you have previously built the project at the project root, 
+If you have previously built the project at the project root,
 make sure there are no previously generated libraries in the ["python" directory](python) by ```make clean```.
+
 
 Release Notes:
 --------------
+* 12/04/2017: Added OpenCV 3.x support. Removed vs2013 template project (use CMAKE instead).
+
 * 07/04/2017: Added Python API, thanks to [@kyu-sz](https://github.com/kyu-sz).
 
 * Version 1.0.0: First version.

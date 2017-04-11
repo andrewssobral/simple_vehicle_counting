@@ -1,8 +1,7 @@
-#pragma once
+﻿#pragma once
 
 #include <iostream>
-#include <cv.h>
-#include <highgui.h>
+#include <opencv2/opencv.hpp>
 
 #include "PBAS.h"
 #include "../IBGS.h"

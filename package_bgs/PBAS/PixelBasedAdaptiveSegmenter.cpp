@@ -1,4 +1,4 @@
-#include "PixelBasedAdaptiveSegmenter.h"
+﻿#include "PixelBasedAdaptiveSegmenter.h"
 
 PixelBasedAdaptiveSegmenter::PixelBasedAdaptiveSegmenter() : firstTime(true), showOutput(true), enableInputBlur(true), enableOutputBlur(true),
 alpha(7.0), beta(1.0), N(20), Raute_min(2), R_incdec(0.05), R_lower(18),

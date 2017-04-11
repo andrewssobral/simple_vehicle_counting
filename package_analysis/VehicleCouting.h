@@ -2,8 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include <cv.h>
-#include <highgui.h>
+#include <opencv2/opencv.hpp>
 
 #include "../package_tracking/cvblob/cvblob.h"
 

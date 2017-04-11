@@ -1,5 +1,6 @@
 vs2013/Release/
-tmp/
+_tmp/
+build_*/
 *.exe
 *.suo
 *.sdf

@@ -36,11 +36,7 @@
 #include <vector>
 #include <limits>
 
-#if (defined(_WIN32) || defined(__WIN32__) || defined(__TOS_WIN__) || defined(__WINDOWS__) || (defined(__APPLE__) & defined(__MACH__)))
-#include <cv.h>
-#else
-#include <opencv/cv.h>
-#endif
+#include <opencv2/opencv.hpp>
 
 #ifndef __CV_BEGIN__
 #define __CV_BEGIN__ __BEGIN__
