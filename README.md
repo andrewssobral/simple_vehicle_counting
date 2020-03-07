@@ -15,7 +15,7 @@ Here is a step-by-step of a simplest way to do this:
 3. And then, check if the **centroid** of the moving object has crossed a **region of interest** (i.e. virtual line) in your video.
 4. Voilà! enjoy it :)
 
-<p align="center"><img src="https://sites.google.com/site/andrewssobral/vehicle_counting_screen.png" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/andrewssobral/simple_vehicle_counting/master/doc/images/vehicle_counting_screen.png" /></p>
 
 
 Citation
