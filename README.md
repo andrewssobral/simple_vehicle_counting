@@ -1,11 +1,10 @@
 Vehicle Detection, Tracking and Counting
 ========================================
+This repository provides a simple end-to-end pipeline for vehicle detection, tracking, and counting using classical computer-vision methods. It combines background-subtraction algorithms (via [BGSLibrary](https://github.com/andrewssobral/bgslibrary)) to detect moving vehicles, blob-tracking ([cvBlob](https://code.google.com/archive/p/cvblob/) or [OpenCVBlobsLib](http://opencvblobslib.github.io/opencvblobslib/)) to follow objects across frames, and a lightweight counting module that increments counts when tracked centroids cross a user-defined virtual line. The project includes C++ source code, a Python API, build scripts for Linux/Windows (via CMake), example demos, and a Docker image. It’s designed as a minimal, easy-to-understand reference implementation rather than a modern deep-learning system.
 
-Last page update: **12/04/2017** (Added Python API & OpenCV 3.x support)
+Last update: **12/04/2017** (Added Python API & OpenCV 3.x support)
 
 Last version: **1.0.0** (see Release Notes for more info)
-
-Hi everyone,
 
 There are several ways to perform vehicle detection, tracking and counting.
 Here is a step-by-step of a simplest way to do this:
